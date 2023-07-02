@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  font-family: "Poppins";
+  margin: 0;
+  padding: 0;
+}
+header {
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: #31344c;
+}
+header .container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+header .container #branding h1 .highlight {
+  color: white;
+}
+header .container nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .container nav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header .container nav ul li {
+  margin-left: 10px;
+  margin-right: 10px;
+  list-style-type: none;
+}
+header .container nav ul li a {
+  text-decoration: none;
+  color: white;
+}
+header .container nav ul li ul {
+  display: none;
+}
+.main {
+  min-height: 100vh;
+}
+body .main .landingImg {
+  background-image: url("./slika.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 500px;
+  filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.landingImg h1 {
+  color: white;
+  font-size: 100px;
+  font-weight: 300;
+}
+.dobrd {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 100px;
+  font-weight: 300;
+  width: 80%;
+  text-align: center;
+}
+.marketing {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.marketing .markBox {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 15px;
+}
