@@ -47,39 +47,40 @@ session_start();
     <div class="tab-content mt-2">
       <div class="tab-pane fade show active" id="login">
         <h4>Login</h4>
-        <form>
+        <form action="index.php" method="post" autocomplete="off">
           <div class="form-group">
             <label for="login-email">Email</label>
-            <input type="email" class="form-control" id="login-email" placeholder="Enter email">
+            <input type="email" class="form-control" name="email" id="login-email" placeholder="Enter email">
           </div>
           <div class="form-group">
             <label for="login-password">Password</label>
-            <input type="password" class="form-control" id="login-password" placeholder="Enter password">
+            <input type="password" class="form-control" name="password" id="login-password" placeholder="Enter password">
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          <button type="submit" class="btn btn-primary" name="login">Login</button>
         </form>
       </div>
 
       <div class="tab-pane fade" id="signup">
         <h4>Registracija</h4>
-        <form>
+        <form action="index.php" method="post" autocomplete="off">
+
             <div class="form-group">
                 <label for="signup-name">Ime</label>
-                <input type="text" class="form-control" id="signup-name" placeholder="Unesite Vase ime">
+                <input type="text" class="form-control"  name="ime" id="signup-name" placeholder="Unesite Vase ime">
             </div>
             <div class="form-group">
                 <label for="signup-lastname">Prezime</label>
-                <input type="text" class="form-control" id="signup-lastname" placeholder="Unesite Vase Prezime">
+                <input type="text" class="form-control" name="prezime" id="signup-lastname" placeholder="Unesite Vase Prezime">
             </div>
           <div class="form-group">
             <label for="signup-email">Email</label>
-            <input type="email" class="form-control" id="signup-email" placeholder="Unesite email">
+            <input type="email" class="form-control" name="email" id="signup-email" placeholder="Unesite email">
           </div>
           <div class="form-group">
             <label for="signup-password">Password</label>
-            <input type="password" class="form-control" id="signup-password" placeholder="Unesite password">
+            <input type="password" class="form-control" name="password" id="signup-password" placeholder="Unesite password">
           </div>
-          <button type="submit" class="btn btn-primary">Registracija</button>
+          <button type="submit" class="btn btn-primary" name="register">Registracija</button>
         </form>
       </div>
     </div>

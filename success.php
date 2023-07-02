@@ -10,14 +10,15 @@ session_start();
 </head>
 <body>
     <div class="form">
-        <h1><?='Success'; ?></h1>
+    <h1><?php echo 'Success'; ?></h1>
         <p>
             <?php
-            if(isset($_SESSION['message']) AND !empty($_SESSION['message']));
-            echo $_SESSION['message'];
-            else:
+            if(isset($_SESSION['message']) && !empty($_SESSION['message'])) {
+                echo $_SESSION['message'];
+            } else {
                 header("location: index.php");
-            endif;
+                exit(); // Dodajemo exit() da se zaustavi daljnje izvršavanje koda
+            }
             ?>
         </p>
         <a href="index.php"><button class="button button-block">Pocetna</button></a>

@@ -1,6 +1,7 @@
 <?php
-$host='localhost';
+$host='127.0.0.1:3307';
 $user='root';
 $pass='';
-$db='accounts';
-$mysqli= new myslqi($host, $user, $pass, $db) or die($mysqli->error);
+$db='pdom';
+$mysqli= new mysqli($host, $user, $pass, $db) or die($mysqli->error);
+?>
