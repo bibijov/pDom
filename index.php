@@ -1,49 +1,91 @@
+<?php
+require 'db.php';
+require 'class.php';
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Pocetna</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <title>Sign-up/Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/css/bootstrap.min.css">
+    
+        <link rel="stylesheet" href="style.css">
+
 </head>
+<?php
+    $object1 = new UserInterface();
+
+    if($_SERVER['REQUEST_METHOD']== 'POST')
+    {
+        if(isset($_POST['login'])){
+            $object1->login();
+        }
+        elseif(isset($_POST['register'])){
+            $object1->register();
+        }
+        elseif(isset($_POST['subscribe'])){
+            $object1->subscribe();
+        }
+        elseif(isset($_POST['unsubscribe'])){
+            $object1->unsubscribe();
+        }
+    }
+?>
 <body>
-    <header>
-        <div class="container">
-            <section id="branding">
-                <h1><span class="highlight">BBIT</span></h1>
-            </section>
-            <nav>
-                <ul>
-                    <li class="curent"><a href="index.php">Pocetna</a></li>
-                    <li><a href="about.php">O nama</a></li>
-                    <li>
-                        <a href="#">Blog</a>
-                </li>
-                <li><a href="contact.php">Kontakt</a></li>
-                <li><a href="subscribe.php">Subscribe</a></li>
-                <li><a href="sort.php">Sort</a></li>
-                <li><a href="search.php">Pretraga</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-    <div class="main">
-        <div class="landingImg">
-            </div>
-        <h1 class="dobrd">Dobrodošli na BBIT</h1>
+<div class="formaKontejner">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login">Login</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup">Signup</a>
+      </li>
+    </ul>
 
-        <div class="marketing">
-            <div class="markBox">
-                <h1>Misija</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc a nibh est. Praesent in mollis nibh. Aenean libero leo, pharetra nec sodales et, posuere sed augue.</p>
+    <div class="tab-content mt-2">
+      <div class="tab-pane fade show active" id="login">
+        <h4>Login</h4>
+        <form>
+          <div class="form-group">
+            <label for="login-email">Email</label>
+            <input type="email" class="form-control" id="login-email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" class="form-control" id="login-password" placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+
+      <div class="tab-pane fade" id="signup">
+        <h4>Registracija</h4>
+        <form>
+            <div class="form-group">
+                <label for="signup-name">Ime</label>
+                <input type="text" class="form-control" id="signup-name" placeholder="Unesite Vase ime">
             </div>
-            <div class="markBox"></div>
-            <div class="markBox"></div>
-        </div>
+            <div class="form-group">
+                <label for="signup-lastname">Prezime</label>
+                <input type="text" class="form-control" id="signup-lastname" placeholder="Unesite Vase Prezime">
+            </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" class="form-control" id="signup-email" placeholder="Unesite email">
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" class="form-control" id="signup-password" placeholder="Unesite password">
+          </div>
+          <button type="submit" class="btn btn-primary">Registracija</button>
+        </form>
+      </div>
     </div>
+  </div>
 
-    <footer>
-        <p>BBIT, copyright &copy; 2023</p>
-    </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
