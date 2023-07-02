@@ -12,7 +12,7 @@ header {
   position: fixed;
   z-index: 10;
   height: 80px;
-  width: calc(100% - 60px);
+  width: 100%;
 }
 header .container {
   width: 100%;
