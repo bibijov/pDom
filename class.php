@@ -79,24 +79,18 @@ class UserInterface{
 
     public function subscribe(){
         $_SESSION['email']=$_POST['email'];
-        $_SESSION['ime']=$_POST['ime'];
-        $_SESSION['prezime']=$_POST['prezime'];
-
-        $ime= $this->mysqli->escape_string($_POST['ime']);
-        $prezime= $this->mysqli->escape_string($_POST['prezime']);
+      
         $email= $this->mysqli->escape_string($_POST['email']);
-        $password= $this->mysqli->escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
-        $hash= $this->mysqli->escape_string(md5(rand(0,1000)));
 
         $result=$this->mysqli->query("SELECT * FROM subscribers WHERE email='$email'") or die($mysqli->error());
 
         if($result->num_rows>0){
-            $_SESSION['message']='Korisnik vec postoji!';
+            $_SESSION['message']='Korisnik je vec subscribovan.';
             header("location: error.php");
         }
         else{
-            $sql="INSERT INTO subscribers (ime, prezime, email, password, hash)"
-                    . "VALUES ('$ime', '$prezime', '$email', '$password', '$hash')";
+            $sql="INSERT INTO subscribers (email)"
+                    . "VALUES ('$email')";
 
             if($this->mysqli->query($sql)){
                 $_SESSION['logged_in']=true;
@@ -114,14 +108,8 @@ class UserInterface{
 
     public function unsubscribe(){
         $_SESSION['email']=$_POST['email'];
-        $_SESSION['ime']=$_POST['ime'];
-        $_SESSION['prezime']=$_POST['prezime'];
 
-        $ime= $this->mysqli->escape_string($_POST['ime']);
-        $prezime= $this->mysqli->escape_string($_POST['prezime']);
         $email= $this->mysqli->escape_string($_POST['email']);
-        $password= $this->mysqli->escape_string(password_hash($_POST['password'], PASSWORD_BCRYPT));
-        $hash= $this->mysqli->escape_string(md5(rand(0,1000)));
 
         $result=$this->mysqli->query("SELECT * FROM subscribers WHERE email='$email'") or die($mysqli->error());
 

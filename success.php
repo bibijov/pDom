@@ -21,7 +21,7 @@ session_start();
             }
             ?>
         </p>
-        <a href="index.php"><button class="button button-block">Pocetna</button></a>
+        <a href="landing.php"><button class="button button-block">Pocetna</button></a>
     </div>
 </body>
 </html>

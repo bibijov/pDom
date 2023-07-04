@@ -13,6 +13,9 @@ header {
   z-index: 10;
   height: 80px;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 header .container {
   width: 100%;
@@ -35,6 +38,7 @@ header .container nav ul {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-bottom: 0 !important;
 }
 header .container nav ul li {
   margin-left: 10px;
@@ -125,4 +129,9 @@ footer {
 }
 button {
   margin-top: 10px;
+}
+.info {
+  padding-top: 100px;
+
+  text-align: center;
 }
