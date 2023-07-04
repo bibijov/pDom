@@ -79,6 +79,24 @@ $result = mysqli_query($connect, $query);
             </table>
             </div>
         </div>
+        <h1 id="usluge">Usluge koje pružamo</h1>
+        <div class="marketing">
+            <div class="markBox">
+                <h1>Izrada web sajta</h1>
+            </div>
+            <div class="markBox">
+                <h1>Izrada web aplikacija</h1>
+            </div>
+            <div class="markBox">
+                <h1>Izrada mobilnih aplikacija</h1>
+            </div>
+            <div class="markBox">
+                <h1>Grafički dizajn</h1>
+            </div>
+            <div class="markBox">
+                <h1>Digitalni marketing</h1>
+            </div>
+        </div>
     </div>
 
     <footer>
